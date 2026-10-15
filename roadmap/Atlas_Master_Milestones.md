@@ -12,7 +12,7 @@ implementation repository; prospective scope and governance live here.
 | ATLAS-027–034 | Knowledge/Tutorial integration, production, and Projection work; several records retain human-review, deferred, or partial status. |
 | ATLAS-035–037 | Closed/accepted product milestones; ATLAS-036 and ATLAS-037 checkpoints are verified below. |
 | ATLAS-PLANNING-001 | Accepted / Closed; original planning checkpoint `419dae60ceb24137d0535a01926c2266c2355680`. |
-| ATLAS-038 | Accepted / Closed 2026-10-15; local implementation integration verified. Atlas remote publication pending (`origin/main` remains `d15cce1f7ac7b166f320c8db2bd44d5ea00c946c`). Local `main` closeout checkpoint `64f436f705caae5c65800865e7abd1bb0081ab3c`. |
+| ATLAS-038 | Accepted / Closed 2026-10-15; implementation published and verified on Atlas `origin/main` at `64f436f705caae5c65800865e7abd1bb0081ab3c`. |
 
 ## Verified recent implementation checkpoints
 

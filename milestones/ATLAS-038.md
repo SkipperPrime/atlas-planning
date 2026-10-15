@@ -6,8 +6,8 @@
 **Source implementation branch:** `feature/atlas-038-movie-synthesis` (retained; fully merged).
 **Implementation integration checkpoint:** Atlas `main` at `ac230c7c960d3e1f61ec70556c470096d2b2514d`.
 **Atlas closeout checkpoint:** `64f436f705caae5c65800865e7abd1bb0081ab3c`.
-**Atlas remote publication:** Pending. As of 2026-10-15, `origin/main` remains
-`d15cce1f7ac7b166f320c8db2bd44d5ea00c946c`; normal push returned HTTP 400.
+**Atlas remote publication:** Published to `origin/main`; verified checkpoint
+`64f436f705caae5c65800865e7abd1bb0081ab3c` (2026-10-15).
 **Acceptance:** Human accepted 2026-10-15; closed after verification and integration.
 **Effort target:** Approximately one development day, subject to reuse of existing infrastructure.
 **Dependencies:** Existing provider-neutral synthesis/candidate lifecycle; canonical Movie and
@@ -167,11 +167,9 @@ The implementation branch was fast-forwarded into Atlas `main` from
 `d15cce1f7ac7b166f320c8db2bd44d5ea00c946c` to code checkpoint
 `ac230c7c960d3e1f61ec70556c470096d2b2514d`. The audit closeout is recorded at
 `64f436f705caae5c65800865e7abd1bb0081ab3c`; ATLAS-036 and ATLAS-037 accepted checkpoints remain
-ancestors. This integration is local: normal Git pushes of Atlas `main` failed with HTTP 400, and
-the connected GitHub ref update reported `not_found`; Atlas `origin/main` therefore remains at
-`d15cce1f7ac7b166f320c8db2bd44d5ea00c946c` and the local `main` is six commits ahead. No forced or
-alternate remote ref update succeeded. Publish the accepted Atlas checkpoint after resolving the
-Atlas remote's receive-pack/authentication issue. The source branch is retained for later cleanup
+ancestors. Atlas `main` was published to `origin/main` by a normal fast-forward push using temporary
+HTTP/1.1 and a 5 MiB post buffer. A subsequent fetch verified local and remote `main` both at
+`64f436f705caae5c65800865e7abd1bb0081ab3c`. The source branch is retained for later cleanup
 review.
 
 Final post-integration verification passed 265 focused tests across 23 files, `npm run check`,

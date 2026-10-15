@@ -12,7 +12,7 @@ implementation repository; prospective scope and governance live here.
 | ATLAS-027–034 | Knowledge/Tutorial integration, production, and Projection work; several records retain human-review, deferred, or partial status. |
 | ATLAS-035–037 | Closed/accepted product milestones; ATLAS-036 and ATLAS-037 checkpoints are verified below. |
 | ATLAS-PLANNING-001 | Accepted / Closed; original planning checkpoint `419dae60ceb24137d0535a01926c2266c2355680`. |
-| ATLAS-038 | Authorized for 038A → 038B → 038C under the published milestone scope; human acceptance pending. |
+| ATLAS-038 | In Progress; authorized for 038A → 038B → 038C under the published milestone scope; human acceptance pending. |
 
 ## Verified recent implementation checkpoints
 

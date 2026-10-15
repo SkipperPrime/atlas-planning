@@ -1,6 +1,6 @@
 # ATLAS-038 — Movie Synthesis & Tutorial Companion Movies
 
-**Status:** Authorized
+**Status:** In Progress
 **Authorization:** Human-authorized implementation in the ATLAS-038 Authorization and Implementation Kickoff instruction; scope fixed by planning commit `419dae60ceb24137d0535a01926c2266c2355680`.
 **Implementation branch:** `feature/atlas-038-movie-synthesis`
 **Verified baseline:** Atlas `main` at `d15cce1f7ac7b166f320c8db2bd44d5ea00c946c`.
@@ -92,3 +92,11 @@ ADR-0014/0015 (evidence and media runtime), ADR-0018/0019 (Tutorial source and v
 (Task/Scenario reuse), ADR-0025/0026 (Tutorial and embedded authored content), ADR-0028/0029
 (Movie components and execution), ADR-0059 (application operations), ADR-0060 (Tutorial lifecycle),
 and ADR-0064 (independent authored Movies and reviewed relations).
+
+## Implementation start
+
+Authorization was recorded in planning commit `07b25728b6f08cc280e23852071245d6b6e98270`.
+Implementation begins on `feature/atlas-038-movie-synthesis` from verified main
+`d15cce1f7ac7b166f320c8db2bd44d5ea00c946c`. The existing instructional synthesis
+contract, shared prose editor, Movie registry/revision boundary and execution runtime
+are the reuse points. Human acceptance remains pending.

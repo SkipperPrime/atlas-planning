@@ -12,7 +12,7 @@ roadmap/Atlas_Master_Milestones.md   Canonical milestone registry and lifecycle 
 roadmap/Atlas_Forward_Roadmap.md     Prospective work after ATLAS-037
 milestones/historical/Atlas_001-037_History.md  Evidence-based historical index
 milestones/ATLAS-PLANNING-001.md    Governance bootstrap record
-milestones/ATLAS-038.md             Proposed Movie synthesis milestone
+milestones/ATLAS-038.md             Movie synthesis milestone
 decisions/README.md                 Planning conventions and links to technical ADRs
 templates/milestone.md              Prospective milestone template
 ```
@@ -26,7 +26,7 @@ acceptance, or closure.
 
 - Historical coverage: ATLAS-001 through ATLAS-037; see the [historical index](milestones/historical/Atlas_001-037_History.md).
 - Governance bootstrap: [ATLAS-PLANNING-001](milestones/ATLAS-PLANNING-001.md), Accepted / Closed.
-- Current milestone: [ATLAS-038](milestones/ATLAS-038.md), authorized for implementation.
+- Current milestone: [ATLAS-038](milestones/ATLAS-038.md), implementation in progress; human acceptance pending.
 - Forward work: [ATLAS-038 onward](roadmap/Atlas_Forward_Roadmap.md).
 - Canonical implementation: [Atlas](https://github.com/SkipperPrime/atlas).
 - Technical architecture decisions: [Atlas ADR index](https://github.com/SkipperPrime/atlas/blob/main/docs/adr/README.md).

@@ -1,11 +1,12 @@
 # ATLAS-038 — Movie Synthesis & Tutorial Companion Movies
 
-**Status:** Verification
+**Status:** Accepted / Closed
 **Authorization:** Human-authorized implementation in the ATLAS-038 Authorization and Implementation Kickoff instruction; scope fixed by planning commit `419dae60ceb24137d0535a01926c2266c2355680`.
-**Implementation branch:** `feature/atlas-038-movie-synthesis`
 **Verified baseline:** Atlas `main` at `d15cce1f7ac7b166f320c8db2bd44d5ea00c946c`.
-**Checkpoints:** Local implementation commits authorized; implementation push and merge await human review.
-**Acceptance:** Pending; automated verification alone cannot close this milestone.
+**Source implementation branch:** `feature/atlas-038-movie-synthesis` (retained; fully merged).
+**Implementation integration checkpoint:** Atlas `main` at `ac230c7c960d3e1f61ec70556c470096d2b2514d`.
+**Atlas closeout checkpoint:** `64f436f705caae5c65800865e7abd1bb0081ab3c`.
+**Acceptance:** Human accepted 2026-10-15; closed after verification and integration.
 **Effort target:** Approximately one development day, subject to reuse of existing infrastructure.
 **Dependencies:** Existing provider-neutral synthesis/candidate lifecycle; canonical Movie and
 Tutorial authorities; existing Task/Scenario and project Application Launch Profile models;
@@ -102,11 +103,11 @@ contract, shared prose editor, Movie registry/revision boundary and execution ru
 are the reuse points. Human acceptance remains pending.
 
 
-## Implementation checkpoints and verification — 2026-10-15
+## Implementation checkpoints and verification — 2026-10-15 (pre-closeout snapshot)
 
-All three authorized slices are implemented on `feature/atlas-038-movie-synthesis`.
-Implementation remains local and unmerged. Human acceptance is pending; this record does not
-mark ATLAS-038 Accepted or Closed.
+At the time this verification snapshot was recorded, the three authorized slices were implemented
+on `feature/atlas-038-movie-synthesis`, with human acceptance and integration still pending. The
+subsequent acceptance and integration outcome is recorded in the closeout section below.
 
 | Checkpoint | Implementation SHA |
 | --- | --- |
@@ -153,3 +154,35 @@ Qualifications and remaining review:
   implementation publication/merge, and eventual closeout remain separate authorization gates.
 
 ATLAS-039 and ATLAS-040 remain Provisional. No development in either milestone is authorized here.
+
+## Human acceptance and closeout — 2026-10-15
+
+Human acceptance is recorded for 038A, 038B, 038C, and the subsequent Studio lifecycle, Tutorial
+reader, capture-free Movie, and companion annotation-default corrections. The authoritative
+implementation audit is [ATLAS-038-MOVIE-SYNTHESIS](https://github.com/SkipperPrime/atlas/blob/main/docs/audits/ATLAS-038-MOVIE-SYNTHESIS.md).
+
+The implementation branch was fast-forwarded into Atlas `main` from
+`d15cce1f7ac7b166f320c8db2bd44d5ea00c946c` to code checkpoint
+`ac230c7c960d3e1f61ec70556c470096d2b2514d`. The audit closeout is recorded at
+`64f436f705caae5c65800865e7abd1bb0081ab3c`; ATLAS-036 and ATLAS-037 accepted checkpoints remain
+ancestors. The source branch is retained for later cleanup review.
+
+Final post-integration verification passed 265 focused tests across 23 files, `npm run check`,
+`npm run build`, and `git diff --check` using Node 24.13.0. The production build retains its known
+large-chunk warning. Real provider synthesis, Studio review/edit/acceptance, persistent Tutorial
+annotations, companion Movie regeneration, 13-step Maya/Aria execution, native 3840 × 1600 capture,
+30 fps rendering, playback, fullscreen, tab navigation, and preservation checks are documented in
+the implementation audit. No Maya execution was repeated for closeout.
+
+The existing `tests/studio-project-switching.test.ts` baseline remains 16/19: the Tutorial hash
+expectation retains `tutorialId`; the Knowledge-render test has an unmocked Knowledge-generation
+read and serializes a React tree rather than matching rendered text; the empty-project test expects
+the obsolete `studio-product-workspace` class and has the same missing request mock. All three
+failures reproduce from pre-correction checkpoint `6f5c58213e5ded0704e4d55f482b7690d13a3e5c` and
+are deferred for independent fixture/expectation maintenance. They do not reproduce in the accepted
+real-Aria navigation flow.
+
+Deferred work: Application Layout Presets; project-level Movie Presentation Settings; bumpers,
+slates, narration, audio tracks, and mixing; initial Project-opening and large-project preparation
+performance; and the three baseline switching-test follow-ups. ATLAS-039 and ATLAS-040 remain
+Provisional and unauthorized.

@@ -7,7 +7,7 @@ establishes a blocker.
 
 ## ATLAS-038 — Movie Synthesis & Tutorial Companion Movies
 
-**Status: In Progress.** Implementation authorized for 038A → 038B → 038C under the published milestone scope; human acceptance remains pending.
+**Status: Verification.** Authorized slices 038A → 038B → 038C are implemented and live validated; human acceptance remains pending. Implementation is local and unmerged.
 See [ATLAS-038](../milestones/ATLAS-038.md) for scope, slices, dependencies, boundaries, and
 acceptance criteria.
 

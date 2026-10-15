@@ -1,6 +1,6 @@
 # ATLAS-038 — Movie Synthesis & Tutorial Companion Movies
 
-**Status:** In Progress
+**Status:** Verification
 **Authorization:** Human-authorized implementation in the ATLAS-038 Authorization and Implementation Kickoff instruction; scope fixed by planning commit `419dae60ceb24137d0535a01926c2266c2355680`.
 **Implementation branch:** `feature/atlas-038-movie-synthesis`
 **Verified baseline:** Atlas `main` at `d15cce1f7ac7b166f320c8db2bd44d5ea00c946c`.
@@ -100,3 +100,56 @@ Implementation begins on `feature/atlas-038-movie-synthesis` from verified main
 `d15cce1f7ac7b166f320c8db2bd44d5ea00c946c`. The existing instructional synthesis
 contract, shared prose editor, Movie registry/revision boundary and execution runtime
 are the reuse points. Human acceptance remains pending.
+
+
+## Implementation checkpoints and verification — 2026-10-15
+
+All three authorized slices are implemented on `feature/atlas-038-movie-synthesis`.
+Implementation remains local and unmerged. Human acceptance is pending; this record does not
+mark ATLAS-038 Accepted or Closed.
+
+| Checkpoint | Implementation SHA |
+| --- | --- |
+| 038A — shared structured Movie synthesis | `561e263f442f6dc0793434be37dab6246eafdc85` |
+| 038B — persistent Tutorial annotation marks | `d53c0ffea16c7321ba5e352faa9f1785dece0a2b` |
+| 038C — companion provenance and reviewed regeneration | `d9c3476718cc8022a48b63822329bc09074ff444` |
+| Live verification and evidence | `6f5c58213e5ded0704e4d55f482b7690d13a3e5c` |
+
+Canonical technical evidence remains in the implementation repository:
+[`docs/audits/ATLAS-038-MOVIE-SYNTHESIS.md`](../../atlas/docs/audits/ATLAS-038-MOVIE-SYNTHESIS.md).
+This local sibling link supports review before the implementation branch is published; the exact
+checkpoint above identifies the evidence. ADR-0026 and ADR-0064 amendments describe the bounded
+editorial-mark and companion provenance extensions without duplicating technical authority here.
+
+Verified results:
+- The existing configured Codex provider returned a structured Movie candidate. Studio reopened,
+  edited and explicitly accepted it through the existing guarded Movie save boundary.
+- Browser-selected Tutorial prose was marked, saved and reloaded with stable identity. A guarded
+  Tutorial revision edited the prose while preserving the mark and original-text provenance.
+  Browser removal left prose intact; Cancel retained the saved mark. Automated persistence tests
+  additionally verify saved removal and reload.
+- A companion Movie reused 12 existing Task occurrences and one Scenario, including the approved
+  Maya/Aria launch profile. Source changes produced an out-of-sync state. Reviewed regeneration
+  created another Movie revision, preserving the entire first accepted revision and authored title.
+- The existing runtime completed all 13 steps, retained a native 3840 × 1600 capture, and rendered
+  the accepted composition at 30 fps (394 frames, 13.133333 seconds). Browser playback and seeking
+  passed; the host reports current artifact and companion-source states.
+- All nine original Movies, five original Tutorials, the first companion revision, and 14 preflight
+  file hashes remained unchanged, including source Tasks/Scenarios, approved launch configuration
+  and prior media. New acceptance products and evidence are project-owned additions.
+- 324 focused tests across 17 files, TypeScript check and production build passed. The final
+  persistence-test extension passed all 19 tests in the focused derivation file. Independent review
+  findings were fixed and rechecked; whitespace checks passed.
+
+Qualifications and remaining review:
+- A broad Aria synthesis request exceeded the existing exposure cap; a narrower canonical subject
+  succeeded. The cap was preserved.
+- The first live execution failed native window matching at Start Recording and cleaned up without
+  a finalized capture. An isolated retry succeeded with the unchanged runtime and profile. The
+  exact transient matching condition is not established; both receipts are retained in the audit.
+- Large-project preparation remains slow and the build retains its existing large-chunk warning.
+  No ATLAS-040 optimization work was undertaken.
+- No blocking implementation issue remains in the exercised path. Human review and acceptance,
+  implementation publication/merge, and eventual closeout remain separate authorization gates.
+
+ATLAS-039 and ATLAS-040 remain Provisional. No development in either milestone is authorized here.

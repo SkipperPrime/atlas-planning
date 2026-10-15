@@ -26,7 +26,7 @@ acceptance, or closure.
 
 - Historical coverage: ATLAS-001 through ATLAS-037; see the [historical index](milestones/historical/Atlas_001-037_History.md).
 - Governance bootstrap: [ATLAS-PLANNING-001](milestones/ATLAS-PLANNING-001.md), Accepted / Closed.
-- Current milestone: [ATLAS-038](milestones/ATLAS-038.md), implementation in progress; human acceptance pending.
+- Current milestone: [ATLAS-038](milestones/ATLAS-038.md), in Verification after implementation and live validation; human acceptance pending.
 - Forward work: [ATLAS-038 onward](roadmap/Atlas_Forward_Roadmap.md).
 - Canonical implementation: [Atlas](https://github.com/SkipperPrime/atlas).
 - Technical architecture decisions: [Atlas ADR index](https://github.com/SkipperPrime/atlas/blob/main/docs/adr/README.md).

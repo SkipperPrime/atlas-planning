@@ -1,7 +1,11 @@
 # ATLAS-038 — Movie Synthesis & Tutorial Companion Movies
 
-**Status:** Proposed — ready for milestone review
-**Authorization:** Planning only. Implementation requires separate explicit authorization.
+**Status:** Authorized
+**Authorization:** Human-authorized implementation in the ATLAS-038 Authorization and Implementation Kickoff instruction; scope fixed by planning commit `419dae60ceb24137d0535a01926c2266c2355680`.
+**Implementation branch:** `feature/atlas-038-movie-synthesis`
+**Verified baseline:** Atlas `main` at `d15cce1f7ac7b166f320c8db2bd44d5ea00c946c`.
+**Checkpoints:** Local implementation commits authorized; implementation push and merge await human review.
+**Acceptance:** Pending; automated verification alone cannot close this milestone.
 **Effort target:** Approximately one development day, subject to reuse of existing infrastructure.
 **Dependencies:** Existing provider-neutral synthesis/candidate lifecycle; canonical Movie and
 Tutorial authorities; existing Task/Scenario and project Application Launch Profile models;
@@ -80,8 +84,10 @@ Required acceptance evidence:
 6. Preservation checks for prior Movie revisions, Tutorial content, source Task/Scenario data, and
    project launch configuration.
 
-Identify an implementation branch and a bounded focused test plan during the implementation
-authorization review. Link applicable technical ADRs rather than creating a planning duplicate:
+The kickoff authorizes sequential implementation of 038A, 038B, and 038C on the branch above.
+Use focused contract, persistence, editor, dependency/revision, and host tests; typecheck and build;
+then demonstrate provider synthesis and the Maya/Aria execution/render path. Preserve original
+source data and accepted Movies. Link applicable technical ADRs rather than creating a planning duplicate:
 ADR-0014/0015 (evidence and media runtime), ADR-0018/0019 (Tutorial source and views), ADR-0021
 (Task/Scenario reuse), ADR-0025/0026 (Tutorial and embedded authored content), ADR-0028/0029
 (Movie components and execution), ADR-0059 (application operations), ADR-0060 (Tutorial lifecycle),

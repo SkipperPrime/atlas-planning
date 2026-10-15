@@ -1,9 +1,9 @@
 # ATLAS-PLANNING-001 — Canonical Milestone Governance Bootstrap
 
-**Status:** Verification complete; awaiting human acceptance
+**Status:** Accepted / Closed
 **Scope:** Atlas planning repository only
 **Implementation repository:** Read-only historical authority
-**Planning checkpoint:** The commit containing this record; resolve from planning Git history after commit.
+**Planning checkpoint:** `419dae60ceb24137d0535a01926c2266c2355680` (published bootstrap; preserved).
 
 ## Objective and delivered scope
 
@@ -33,15 +33,10 @@ write target. Atlas implementation files, branches, and history were read-only.
 
 ## Closeout disposition
 
-This record is ready for human review. On acceptance, update its status and the master registry to
-**Accepted / Closed**, retaining this commit as the planning checkpoint. ATLAS-038 remains
-**Proposed** until separately authorized for implementation. No implementation changes or remote
-push are part of this bootstrap.
+Human acceptance was explicitly recorded in the ATLAS-038 Authorization and Implementation
+Kickoff instruction. ATLAS-PLANNING-001 is Accepted / Closed at its original published planning
+checkpoint `419dae60ceb24137d0535a01926c2266c2355680`. Historical qualifications and evidence gaps
+remain unchanged. No development worktree was created for this planning-only milestone.
 
-## Human review items
-
-- Review the historical qualifications and the explicitly listed evidence gaps, especially for
-  milestones without one consolidated closeout record.
-- Accept the planning lifecycle and closeout conventions.
-- Review ATLAS-038 scope and its one-day bounded-effort target before any later implementation
-  authorization.
+The same instruction separately authorizes ATLAS-038 implementation, limited to the published
+milestone specification. This acceptance does not change ATLAS-039 or ATLAS-040.

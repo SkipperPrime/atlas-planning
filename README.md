@@ -30,6 +30,7 @@ acceptance, or closure.
 
 - Historical coverage: ATLAS-001 through ATLAS-037; see the [historical index](milestones/historical/Atlas_001-037_History.md).
 - Governance bootstrap: [ATLAS-PLANNING-001](milestones/ATLAS-PLANNING-001.md), Accepted / Closed.
+- Most recently closed product milestone: [ATLAS-038](milestones/ATLAS-038.md), Accepted / Closed (2026-10-15); published Atlas checkpoint `64f436f705caae5c65800865e7abd1bb0081ab3c`.
 - Current milestone: [ATLAS-039](milestones/ATLAS-039.md), Proposed; planning accepted, implementation not authorized.
 - Forward work: [ATLAS-039 onward](roadmap/Atlas_Forward_Roadmap.md).
 - Canonical implementation: [Atlas](https://github.com/SkipperPrime/atlas).
@@ -39,3 +40,5 @@ acceptance, or closure.
 Milestone architecture and deferred-capability ADRs are authoritative planning decisions here.
 They do not authorize implementation. Implementation-level technical ADRs and acceptance evidence
 remain in Atlas; link to those records rather than copying their technical authority.
+
+ATLAS-038 was accepted, integrated, published, and closed. The [post-038 repository consolidation](maintenance/2026-10-15-post-038-consolidation.md) is complete. This README and roadmap do not themselves authorize implementation.

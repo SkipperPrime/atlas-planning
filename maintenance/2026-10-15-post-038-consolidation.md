@@ -2,11 +2,12 @@
 
 - Recorded: 2026-10-15 (America/New_York).
 - Type: repository maintenance; not a new product milestone.
-- Disposition: **PARTIAL — archive backup and hosted dependency verification pending**.
-- Authorization: human instruction “ATLAS — Final Repository Consolidation and Production Baseline,” following the authorized Pass 1 branch cleanup.
+- Disposition: **COMPLETE — repository consolidation verified**.
+- Authorization: human instructions “ATLAS — Final Repository Consolidation and Production Baseline,” “ATLAS — Final Remote Branch Cleanup,” and “ATLAS — Final Historical Cleanup and Consolidation Closeout,” following the authorized Pass 1 cleanup.
 - Implementation baseline: `64f436f705caae5c65800865e7abd1bb0081ab3c`, unchanged on local and advertised remote `main`.
 - Planning baseline before this record: `dc03631f346193dcc737fa4ebc0bb9e91877d0ff`, clean and synchronized with advertised remote `main`.
-- Planning checkpoint: the commit introducing this record; identify with `git log -1 --format=%H -- maintenance/2026-10-15-post-038-consolidation.md`. This checkpoint is local only; publication is not authorized by this maintenance instruction.
+- Initial maintenance checkpoint: `163779d4fca0630bf4bcc43f09546680770ac22e`, preserved in planning history.
+- Final maintenance checkpoint: the commit finalizing this record; identify with `git log -1 --format=%H -- maintenance/2026-10-15-post-038-consolidation.md`. The final human instruction authorizes publishing both maintenance commits to existing planning `origin/main` by normal fast-forward push. Final advertised/local SHA equality is verified after publication and reported in the closeout response.
 - Canonical product acceptance remains [ATLAS-038](../milestones/ATLAS-038.md), Accepted / Closed. No milestone status, roadmap priority, technical ADR, or implementation behavior changes here.
 
 ## Completed branch cleanup
@@ -51,13 +52,16 @@ No force deletion or accepted-history rewrite occurred.
 
 This consolidation pass recognized these deletions and did not repeat them.
 
-## Remaining local references and worktrees
+## Final local references and worktrees
 
 | Local branch | Tip | Disposition |
 |---|---|---|
 | main | 64f436f705caae5c65800865e7abd1bb0081ab3c | Accepted production baseline. |
-| architecture/atlas-knowledge-synthesis | bc66ebcc11c8fa18f5dc0bffb7e6ea3ac8f29b38 | Three unique historical experiment commits; archive verified, independent backup pending; branch retained. |
-| docs/aria-knowledge-synthesis | dfbfcc87011f451f9da564bf01b7b3c1ae45e3b9 | One unique historical documentation/export commit; archive verified, independent backup pending; branch retained. |
+
+The two noncanonical experimental branch refs were retired after archive recovery and independent
+backup verification. Their exact original tips remain in the archive and are recorded below.
+Explicit force deletion was authorized only for those two unmerged historical refs; no content
+was merged, no accepted history rewritten, and no other local branch force-deleted.
 
 Exactly one registered worktree per repository remains:
 
@@ -117,30 +121,49 @@ Scratch repositories were removed after verification. The archive README gives c
 `SHA256SUMS`, fetch into a new isolated repository, inspect the original branch names, and apply
 the documentation stash only in that disposable historical checkout.
 
-**Independent-copy gate remains open.** No approved independent storage destination has been
-provided or verified. A second local folder on the same disk is not claimed as a durable backup.
-Both experimental branch refs and both stashes therefore remain intact. Copy the complete archive
-to approved independent storage, verify its checksums and recovery, and record that location before
-retiring the remaining historical refs.
+### Independent backup and final retirement verification
+
+Independent second copy: [Google Drive historical archive](https://drive.google.com/drive/folders/1tBQ-MX4OLJN9HQSwzYxB3UUiZ9sVYRrH).
+
+Evidence supplied by the user in the final authorization: ChatGPT freshly downloaded the actual
+11,018,413-byte bundle from Google Drive, verified bundle SHA-256
+`46749a4cd072e969c00e121482307e9074e96627277581906c6798c0f53c80e4`
+and the manifest checksum, restored all four refs in isolation, passed bundle/integrity checks,
+and confirmed both branch tips and both stash commit IDs.
+
+This local closeout did not claim a second Drive download. It freshly reverified the unchanged
+local bundle and all accompanying checksums, recovered it into another empty repository, compared
+all four tips, complete parent graphs, recursive content trees and stash index/untracked trees
+against the live originals, and passed `git fsck --full --no-reflogs --no-dangling`.
+
+The independent-copy gate is satisfied by the user's supplied Drive verification plus this fresh
+local recovery. Only then were the two exact branch refs deleted and the two exact stashes dropped.
+The original archive files remain byte-unchanged. Their as-created manifest/README describe the
+initial pending gate; this closeout records its subsequent fulfillment without changing the
+checksummed first or second copy.
 
 ## Stash reconciliation
 
 | Stash identity | Findings | Disposition |
 |---|---|---|
-| 579c2608f2b1bba6aed9c4417fa1a9968926dc63 | No tracked edits. Its 2,322,747-byte compressed sidecar is byte-identical to accepted main:docs/audits/atlas-021/sidecar.json.gz. Full stash object history is also bundled. | Retained pending independent archive backup. |
-| a0e5dc3e24a64af8f1fea59e860c8a311debf650 | Modified docs/aria/README.md and docs/aria/ShapeNetwork.md, plus untracked docs/aria/api/ShapeNetwork.md and docs/aria/guides/shape-networks.md. All four content hashes verified after bundle recovery. | Retained pending independent archive backup; never applied to production. |
+| 579c2608f2b1bba6aed9c4417fa1a9968926dc63 | No tracked edits. Its 2,322,747-byte compressed sidecar is byte-identical to accepted main:docs/audits/atlas-021/sidecar.json.gz. Full stash object history is also bundled. | Archived and dropped after verification; no application to main. |
+| a0e5dc3e24a64af8f1fea59e860c8a311debf650 | Modified docs/aria/README.md and docs/aria/ShapeNetwork.md, plus untracked docs/aria/api/ShapeNetwork.md and docs/aria/guides/shape-networks.md. All four content hashes verified after bundle recovery. | Archived and dropped after verification; never applied to production. |
 
 Sidecar SHA-256: `cd98dcdfa8dcfd8aba8a6d9b1d42f46f0cae8dcf27ba556d8180bf71741cbbd5`.
 
 Bundle refs are `refs/archive/stashes/evidence-sidecar` and `refs/archive/stashes/aria-docs`.
-Identify stashes by commit IDs when resuming, because positional indices can change.
+Both stashes were identified by exact commit ID immediately before each drop. After dropping the
+first stash, the second resolved to `stash@{0}` and was reverified against its audited hash.
+The final stash inventory is empty.
 
 ## Remote branches and hosted verification
 
-All nine advertised branch tips still match the prior audit and local remote-tracking refs.
-All eight historical tips are ancestors of both accepted local `main` and `origin/main`.
+The eight historical branches below were deleted by one normal atomic push using explicit
+branch-name deletions. Their last advertised tips matched the audit and were ancestors of both
+accepted local `main` and `origin/main`. A subsequent fetch with pruning confirmed that only
+`origin/main` remains. GitHub advertises only `main`, still its default branch.
 
-| Remote branch | Advertised tip |
+| Remote branch | Last verified tip (historical branches deleted; main retained) |
 |---|---|
 | atlas-005/tutorial-studio | 0a4efdd9e5730f42a5ec265944c6c3aaadda150a |
 | atlas-006/tutorial-harness | b0fb1b648b784b1fec1f8eb21a69fab147a38d6f |
@@ -152,29 +175,25 @@ All eight historical tips are ancestors of both accepted local `main` and `origi
 | main | 64f436f705caae5c65800865e7abd1bb0081ab3c |
 | master | b0fb1b648b784b1fec1f8eb21a69fab147a38d6f |
 
-GitHub verification found:
+Verification before the remote deletion found:
 
 - Default branch: `main`; Pages disabled.
 - No open pull requests; no GitHub Actions workflow runs.
 - No `.github/workflows` files in any of the nine branch-tip trees.
 - Branch-list API reports all candidates unprotected.
-- Detailed branch-protection API returns 403, “Resource not accessible by integration.”
-- Ruleset API returns 403, “Upgrade to GitHub Pro or make this repository public to enable this feature.”
-- The connector does not support the workflow-definition, deployment, or webhook endpoints.
-- GitHub CLI is not installed. The already-installed browser automation interface was tried read-only:
-  the Atlas branch-settings page returned “Page not found,” with “Sign in” visible. The temporary
-  browser tab was closed. No sign-in, credential retrieval, or settings changes were attempted.
+- A repository configuration/workflow reference search found historical audit mentions and one
+  fixed report label in `scripts/audit-post-016-aria.ts`; no active dependency on the retired refs.
+- Earlier API inspection lacked protection-detail access (403), and the available browser was
+  signed out. The subsequent administrator-level inspection supplied by the user confirmed:
+  no rulesets, classic branch-protection rules, webhooks, Environments, or Pages deployment.
+  This explicit confirmation satisfied the hosted-settings gate; inaccessible APIs were not
+  repeatedly retried or bypassed.
+- All eight remote deletion results were `[deleted]`. No authentication failure occurred.
+- No credential, protection, default-branch, ownership, or hosting settings changed.
 
-The unavailable detail does not establish an active restriction. It also does not satisfy the
-human-required dependency verification gate. **All eight historical remote deletions remain blocked**;
-no remote branch was deleted and no stale tracking ref required pruning.
-
-Shortest administrator follow-up: in SkipperPrime/atlas, inspect Settings → Branches,
-Rules → Rulesets, Environments, Pages, and Webhooks; confirm no protection/rule, deployment,
-webhook, or external automation requires any of the eight historical branch names in the table.
-Confirm external CI dependencies with their owner where applicable. Provide that confirmation;
-then revalidate current tips, PRs/default branch and ancestry before authorized deletion. Do not
-change protections or credentials to force deletion through.
+The remote cleanup was completed before this final historical-reference retirement. Its accepted
+main tip remains `64f436f705caae5c65800865e7abd1bb0081ab3c`.
+No hosted verification blocker remains.
 
 ## Integrity and preservation
 
@@ -182,8 +201,10 @@ change protections or credentials to force deletion through.
 - Accepted ATLAS-036 `6096d0a786029fcfd7af85d725e8544c3ce4a7bf`,
   ATLAS-037 `da47e71f3bac50a61f8c597dfb4358793ed27103`, and ATLAS-038
   `64f436f705caae5c65800865e7abd1bb0081ab3c` remain reachable from implementation main.
-- Implementation main, all accepted implementation files/ADRs, and remote refs are unchanged.
-- Protected experimental refs and both stash commits, parents, and content-tree IDs remain unchanged.
+- Implementation main and all accepted implementation files/ADRs are unchanged; only authorized
+  historical branch/stash refs were retired. All retained refs are unchanged.
+- Both experimental histories and both stash commits, parents, and complete content trees remain
+  recoverable from the verified local and independent Google Drive archives.
 - Before/after file-metadata inventories cover implementation `.atlas-projects`,
   `docs/audits`, and the entire `/Users/tim/Documents/Atlas Projects/Aria Human Review`
   directory, including acceptance evidence: paths, modes, sizes, and modification times unchanged.
@@ -193,13 +214,24 @@ change protections or credentials to force deletion through.
 - No HTTP tracing, credential changes, history rewriting, garbage collection, project-data
   deletion, or ATLAS-039 implementation occurred.
 
-## Remaining acceptance gates
+## Final acceptance
 
-1. Provide and verify an independent archive copy; then retire the two historical branches and stashes.
-2. Obtain administrator hosted-dependency confirmation; then delete the eight historical remote refs
-   and prune only stale refs resulting from those deletions.
-3. Reverify main, ancestry, preservation, refs, and repository integrity; update this record with the
-   achieved final inventory.
-4. Planning publication remains a separate authorization boundary.
+| Gate | Result |
+|---|---|
+| 31 redundant local branches removed | PASS, earlier authorized passes. |
+| Eight redundant remote branches removed | PASS, explicit named deletion and fetched inventory. |
+| Two unique experimental branches archived and retired | PASS, exact tips and independent-copy verification. |
+| Two historical stashes archived and retired | PASS, exact commit IDs and complete content recovery. |
+| One Atlas local branch / one remote branch | PASS: `main` / `origin/main`. |
+| Zero historical stashes | PASS. |
+| No linked or stale worktrees | PASS in both repositories. |
+| Accepted implementation main unchanged and synchronized | PASS: `64f436f705caae5c65800865e7abd1bb0081ab3c`. |
+| Accepted ATLAS-036/037/038 ancestry and repository integrity | PASS. |
+| Project data, acceptance evidence, source, and original archive preserved | PASS. |
+| Planning scope | Maintenance record and its README index only; accepted milestone/ADR decisions unchanged. |
 
-The requested one-local-branch, one-remote-branch, zero-stash target has **not** yet been reached.
+Planning publication is explicitly authorized by the final closeout instruction. The existing
+remote was fetched and verified at `dc03631f346193dcc737fa4ebc0bb9e91877d0ff`, an ancestor of
+the maintenance commits. Publication uses a normal push to existing `main`, with another
+advertised-tip check immediately before pushing and fetched local/remote SHA equality afterward.
+No force push, new product milestone, or ATLAS-039 implementation is part of this closeout.

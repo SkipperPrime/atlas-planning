@@ -3,7 +3,7 @@
 **Status:** Accepted / Closed
 **Authorization:** Human-authorized implementation in the ATLAS-038 Authorization and Implementation Kickoff instruction; scope fixed by planning commit `419dae60ceb24137d0535a01926c2266c2355680`.
 **Verified baseline:** Atlas `main` at `d15cce1f7ac7b166f320c8db2bd44d5ea00c946c`.
-**Source implementation branch:** `feature/atlas-038-movie-synthesis` (retained; fully merged).
+**Source implementation branch:** `feature/atlas-038-movie-synthesis` (fully integrated; historical branch reference subsequently retired during post-038 consolidation).
 **Implementation integration checkpoint:** Atlas `main` at `ac230c7c960d3e1f61ec70556c470096d2b2514d`.
 **Atlas closeout checkpoint:** `64f436f705caae5c65800865e7abd1bb0081ab3c`.
 **Atlas remote publication:** Published to `origin/main`; verified checkpoint
@@ -119,9 +119,8 @@ subsequent acceptance and integration outcome is recorded in the closeout sectio
 | Live verification and evidence | `6f5c58213e5ded0704e4d55f482b7690d13a3e5c` |
 
 Canonical technical evidence remains in the implementation repository:
-[`docs/audits/ATLAS-038-MOVIE-SYNTHESIS.md`](../../atlas/docs/audits/ATLAS-038-MOVIE-SYNTHESIS.md).
-This local sibling link supports review before the implementation branch is published; the exact
-checkpoint above identifies the evidence. ADR-0026 and ADR-0064 amendments describe the bounded
+[`docs/audits/ATLAS-038-MOVIE-SYNTHESIS.md`](https://github.com/SkipperPrime/atlas/blob/64f436f705caae5c65800865e7abd1bb0081ab3c/docs/audits/ATLAS-038-MOVIE-SYNTHESIS.md).
+The immutable implementation checkpoint above identifies the historical verification snapshot. ADR-0026 and ADR-0064 amendments describe the bounded
 editorial-mark and companion provenance extensions without duplicating technical authority here.
 
 Verified results:
@@ -191,3 +190,7 @@ Deferred work: Application Layout Presets; project-level Movie Presentation Sett
 slates, narration, audio tracks, and mixing; initial Project-opening and large-project preparation
 performance; and the three baseline switching-test follow-ups. ATLAS-039 and ATLAS-040 remain
 Provisional and unauthorized.
+
+## Post-closeout repository housekeeping — 2026-10-15
+
+The separately authorized [post-038 consolidation](../maintenance/2026-10-15-post-038-consolidation.md) retired the fully integrated `feature/atlas-038-movie-synthesis` branch reference along with other obsolete local and remote branches. Atlas `main` / `origin/main` remain at the accepted checkpoint `64f436f705caae5c65800865e7abd1bb0081ab3c`. This administrative update does not change acceptance, implementation evidence, or the dated pre-closeout snapshots above. ATLAS-039 remains proposed and unauthorized for implementation.

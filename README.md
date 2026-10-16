@@ -27,10 +27,9 @@ acceptance, or closure.
 
 - Historical coverage: ATLAS-001 through ATLAS-037; see the [historical index](milestones/historical/Atlas_001-037_History.md).
 - Governance bootstrap: [ATLAS-PLANNING-001](milestones/ATLAS-PLANNING-001.md), Accepted / Closed.
-- Current milestone: [ATLAS-038](milestones/ATLAS-038.md), in Verification after implementation and live validation; human acceptance pending.
-- Forward work: [ATLAS-038 onward](roadmap/Atlas_Forward_Roadmap.md).
+- Most recently closed product milestone: [ATLAS-038](milestones/ATLAS-038.md), Accepted / Closed (2026-10-15); published Atlas checkpoint `64f436f705caae5c65800865e7abd1bb0081ab3c`.
+- Next proposed milestone: ATLAS-039 — Application Layout Presets & Recording Consistency; planning review only, no implementation authorization. See the [forward roadmap](roadmap/Atlas_Forward_Roadmap.md).
 - Canonical implementation: [Atlas](https://github.com/SkipperPrime/atlas).
 - Technical architecture decisions: [Atlas ADR index](https://github.com/SkipperPrime/atlas/blob/main/docs/adr/README.md).
 
-The subsequent human kickoff authorizes ATLAS-038 implementation within the published specification.
-Implementation acceptance, push, and merge require later human review.
+ATLAS-038 was subsequently accepted, integrated, published, and closed. The [post-038 repository consolidation](maintenance/2026-10-15-post-038-consolidation.md) is complete. No ATLAS-039 implementation is authorized by this README or roadmap.

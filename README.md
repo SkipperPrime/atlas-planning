@@ -15,6 +15,7 @@ milestones/ATLAS-PLANNING-001.md    Governance bootstrap record
 milestones/ATLAS-038.md             Movie synthesis milestone
 decisions/README.md                 Planning conventions and links to technical ADRs
 templates/milestone.md              Prospective milestone template
+maintenance/2026-10-15-post-038-consolidation.md  Repository cleanup evidence and remaining gates
 ```
 
 Historical records in Atlas remain authoritative. The registry links to them and does not

@@ -2,16 +2,19 @@
 
 ## Authority boundary
 
-Technical architecture decisions remain authoritative in the Atlas implementation repository’s
+Milestone architecture decisions, roadmap scope, and deferred-capability decisions are
+authoritative in this planning repository. Implementation-level technical contracts, amendments,
+and supersession history remain authoritative in the Atlas implementation repository’s
 [`docs/adr/`](https://github.com/SkipperPrime/atlas/tree/main/docs/adr/), indexed by its
-[ADR README](https://github.com/SkipperPrime/atlas/blob/main/docs/adr/README.md). This repository
-does not copy technical ADRs, create competing implementation decisions, or rewrite their
-amendment/supersession history. Milestone records link to the applicable ADR and implementation
-audit.
+[ADR README](https://github.com/SkipperPrime/atlas/blob/main/docs/adr/README.md). Planning ADRs
+record approved direction and boundaries; they do not copy implementation details or replace
+Atlas technical ADRs. Milestone records link to both applicable planning decisions and technical
+evidence.
 
-The canonical technical ADR set currently runs from ADR-0001 through ADR-0064. The Atlas ADR
-index and each ADR are the authoritative inventory for individual titles, status, amendments,
-clarifications, and supersession. The historical registry provides milestone-level cross-links.
+The implementation ADR set currently runs from ADR-0001 through ADR-0064. Planning ADRs continue
+the shared identifier sequence, with their planning-only location and authority stated in each
+record. The Atlas ADR index remains authoritative for implementation ADRs; this index is
+authoritative for planning ADRs. The historical registry provides milestone-level cross-links.
 
 ## Planning governance conventions
 
@@ -44,5 +47,15 @@ ATLAS-038 should link to, not amend without cause:
 - ADR-0064 — independently authored Movies and reviewed product relations.
 
 This list is scoped guidance, not an exhaustive ADR inventory. If implementation discovers a
-genuinely new durable decision, first evaluate whether an amendment or clarification to an
-existing ADR is sufficient and follow the Atlas ADR convention.
+genuinely new durable implementation contract, first evaluate whether an amendment or clarification
+to an existing Atlas ADR is sufficient and follow the Atlas ADR convention.
+
+## Planning ADR index
+
+| ADR | Status | Decision |
+|---|---|---|
+| [ADR-0065](0065-application-layout-providers-and-project-layout-presets.md) | Accepted planning decision | Separate application startup, provider-owned layout mechanisms, Project-owned desired-state presets, explicit application, and ordered Movie execution. |
+| [ADR-0066](0066-application-layout-deferred-authoring-providers-and-automation.md) | Accepted deferred-decision record | Keep broader providers, visual authoring, automation, learning, and advanced execution capabilities discoverable and deferred. |
+
+ATLAS-039 is governed by [ADR-0065](0065-application-layout-providers-and-project-layout-presets.md)
+and links the separate [deferred-capabilities record](0066-application-layout-deferred-authoring-providers-and-automation.md).

@@ -13,6 +13,8 @@ implementation repository; prospective scope and governance live here.
 | ATLAS-035–037 | Closed/accepted product milestones; ATLAS-036 and ATLAS-037 checkpoints are verified below. |
 | ATLAS-PLANNING-001 | Accepted / Closed; original planning checkpoint `419dae60ceb24137d0535a01926c2266c2355680`. |
 | ATLAS-038 | Accepted / Closed 2026-10-15; implementation published and verified on Atlas `origin/main` at `64f436f705caae5c65800865e7abd1bb0081ab3c`. |
+| ATLAS-039 | Proposed; planning architecture accepted in ADR-0065, implementation not authorized. See [milestone plan](../milestones/ATLAS-039.md) and [deferred layout capabilities](../decisions/0066-application-layout-deferred-authoring-providers-and-automation.md). |
+| ATLAS-040 | Provisional; Performance & Optimization remains the established candidate assignment. |
 
 ## Verified recent implementation checkpoints
 

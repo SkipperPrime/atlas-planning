@@ -1,8 +1,9 @@
 # Atlas Milestone Planning
 
 Atlas-only planning and governance for the Atlas implementation repository. This repository
-tracks milestone intent, status, dependencies, authorization, acceptance, and checkpoint pointers;
-the implementation repository remains authoritative for code, technical ADRs, audits, and
+tracks milestone intent, status, dependencies, authorization, acceptance, checkpoint pointers,
+milestone architecture ADRs, roadmap entries, and deferred capabilities. The implementation
+repository remains authoritative for code, implementation-level technical ADRs, audits, and
 acceptance artifacts.
 
 ## Structure
@@ -10,10 +11,12 @@ acceptance artifacts.
 ```text
 roadmap/Atlas_Master_Milestones.md   Canonical milestone registry and lifecycle rules
 roadmap/Atlas_Forward_Roadmap.md     Prospective work after ATLAS-037
+decisions/                           Planning architecture decisions and deferred capabilities
 milestones/historical/Atlas_001-037_History.md  Evidence-based historical index
 milestones/ATLAS-PLANNING-001.md    Governance bootstrap record
 milestones/ATLAS-038.md             Movie synthesis milestone
-decisions/README.md                 Planning conventions and links to technical ADRs
+milestones/ATLAS-039.md             Application layout milestone
+decisions/README.md                 Planning ADR index and conventions
 templates/milestone.md              Prospective milestone template
 maintenance/2026-10-15-post-038-consolidation.md  Completed repository consolidation and archive evidence
 ```
@@ -27,10 +30,12 @@ acceptance, or closure.
 
 - Historical coverage: ATLAS-001 through ATLAS-037; see the [historical index](milestones/historical/Atlas_001-037_History.md).
 - Governance bootstrap: [ATLAS-PLANNING-001](milestones/ATLAS-PLANNING-001.md), Accepted / Closed.
-- Current milestone: [ATLAS-038](milestones/ATLAS-038.md), in Verification after implementation and live validation; human acceptance pending.
-- Forward work: [ATLAS-038 onward](roadmap/Atlas_Forward_Roadmap.md).
+- Current milestone: [ATLAS-039](milestones/ATLAS-039.md), Proposed; planning accepted, implementation not authorized.
+- Forward work: [ATLAS-039 onward](roadmap/Atlas_Forward_Roadmap.md).
 - Canonical implementation: [Atlas](https://github.com/SkipperPrime/atlas).
-- Technical architecture decisions: [Atlas ADR index](https://github.com/SkipperPrime/atlas/blob/main/docs/adr/README.md).
+- Planning architecture and deferrals: [planning ADR index](decisions/README.md).
+- Implementation technical decisions: [Atlas ADR index](https://github.com/SkipperPrime/atlas/blob/main/docs/adr/README.md).
 
-The subsequent human kickoff authorizes ATLAS-038 implementation within the published specification.
-Implementation acceptance, push, and merge require later human review.
+Milestone architecture and deferred-capability ADRs are authoritative planning decisions here.
+They do not authorize implementation. Implementation-level technical ADRs and acceptance evidence
+remain in Atlas; link to those records rather than copying their technical authority.
